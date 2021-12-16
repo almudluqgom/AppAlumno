@@ -9,6 +9,6 @@ public class MacetaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maceta);
+        //setContentView(R.layout.activity_maceta);
     }
 }

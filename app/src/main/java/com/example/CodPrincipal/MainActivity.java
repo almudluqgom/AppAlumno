@@ -1,43 +1,54 @@
 package com.example.CodPrincipal;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import info.androidhive.sqlite.helper.DatabaseHelper;
-import info.androidhive.sqlite.model.Alumno;
+
+import info.androidhive.sqlite.helper.model.Alumno;
 
 public class MainActivity extends AppCompatActivity {
     // Database Helper
-    DatabaseHelper db;
     private TextView textAl;
     private String IdAlumno = "";
-    //private Alumno alumnoregistrado;
+    Alumno AlumnoActual;
+    Button botonT, botonP;
+    ImageButton botonA, login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        login = (ImageButton)findViewById(R.id.BotonLogin);
+        login.setBackgroundResource(R.drawable.logo1);
         textAl = (TextView)findViewById(R.id.TextoSaludoAlumno);
-        IdAlumno = getIntent().getStringExtra("IdAlumno");
+        botonT = (Button)findViewById(R.id.BotonTarea);
+        botonP = (Button)findViewById(R.id.BotonProgreso);
+        botonA = (ImageButton) findViewById(R.id.BotonMaceta);
 
-        if(IdAlumno == ""){
-            textAl.setText("<- Inicia sesión pulsando el icono");
+        if(getIntent().getExtras() != null) {
+            AlumnoActual = (Alumno) getIntent().getSerializableExtra("alumno");
+            login.setBackgroundResource(AlumnoActual.getIDFoto());
+            IdAlumno =AlumnoActual.getIdAlumno();
         }
-        else{
-            //if(alumnoregistrado == null)       alumnoregistrado =db.getAlumno(IdAlumno);
-            textAl.setText("Hola, " + db.getNombreAlumno(IdAlumno));
+
+        if(!TextUtils.isEmpty(IdAlumno)){
+            textAl.setText("Hola, " +AlumnoActual.getNombreApell());
+            botonT.setEnabled(true);
+            botonP.setEnabled(true);
         }
     }
 
     //Boton a la activity VerListaActivity Tareas
     public void AccedeTareas(View view){
         Intent LisTareas = new Intent(this, VerListaActivity.class);
-        LisTareas.putExtra("IdAlumno",IdAlumno);
+        LisTareas.putExtra("alumno",AlumnoActual);
         startActivity(LisTareas);
     }
     //Boton Login
@@ -50,12 +61,12 @@ public class MainActivity extends AppCompatActivity {
     //Boton Progreso
     public void AccedeProgreso(View view){
         Intent Progreso = new Intent(this, ProgresoActivity.class);
-        Progreso.putExtra("IdAlumno",IdAlumno);
+        Progreso.putExtra("alumno",AlumnoActual);
         startActivity(Progreso);
     }
     public void AccedeMaceta(View view){
         Intent Maceta = new Intent(this, MacetaActivity.class);
-        Maceta.putExtra("IdAlumno",IdAlumno);
+        Maceta.putExtra("alumno",AlumnoActual);
         startActivity(Maceta);
     }
 }

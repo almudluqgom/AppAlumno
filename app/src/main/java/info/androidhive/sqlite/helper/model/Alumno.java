@@ -1,24 +1,46 @@
-package info.androidhive.sqlite.model;
+package info.androidhive.sqlite.helper.model;
 
-public class Alumno {
+import java.io.Serializable;
 
+public class Alumno implements Serializable {
+
+    String idAlumno;
     String NombreApell;
-    String IDFoto;
+    int IDFoto;
     int TareasCompletas,TareasSinHacer,TareasEntregadas;
     int GotasAgua, EstatusMaceta;
 
-    public Alumno(){};
+    public Alumno(){}
 
-    public Alumno(String nombreApell, String IDFoto, int tareasCompletas, int tareasSinHacer, int tareasEntregadas, int gotasAgua, int estatusMaceta) {
-
-        NombreApell = nombreApell;
-        this.IDFoto = IDFoto;
-        TareasCompletas = tareasCompletas;
-        TareasSinHacer = tareasSinHacer;
-        TareasEntregadas = tareasEntregadas;
-        GotasAgua = gotasAgua;
-        EstatusMaceta = estatusMaceta;
+    public Alumno(Alumno a){
+        this.idAlumno = a.getIdAlumno();
+        this.NombreApell = a.getNombreApell();
+        this.IDFoto = a.getIDFoto();
+        this.TareasCompletas = a.getTareasCompletas();
+        this.TareasSinHacer = a.getTareasSinHacer();
+        this.TareasEntregadas = a.getTareasEntregadas();
+        this.GotasAgua = a.getGotasAgua();
+        this.EstatusMaceta = a.getEstatusMaceta();
     }
+    public Alumno(String idAl, String nombreApell, int IDFoto, int tareasCompletas, int tareasSinHacer,
+                  int tareasEntregadas, int gotasAgua, int estatusMaceta) {
+        this.idAlumno = idAl;
+        this.NombreApell = nombreApell;
+        this.IDFoto = IDFoto;
+        this.TareasCompletas = tareasCompletas;
+        this.TareasSinHacer = tareasSinHacer;
+        this.TareasEntregadas = tareasEntregadas;
+        this.GotasAgua = gotasAgua;
+        this.EstatusMaceta = estatusMaceta;
+    }
+    public String getIdAlumno() {
+        return idAlumno;
+    }
+
+    public void setIdAlumno(String idAlumno) {
+        this.idAlumno = idAlumno;
+    }
+
 
     public String getNombreApell() {
         return NombreApell;
@@ -28,11 +50,11 @@ public class Alumno {
         NombreApell = nombreApell;
     }
 
-    public String getIDFoto() {
+    public int getIDFoto() {
         return IDFoto;
     }
 
-    public void setIDFoto(String IDFoto) {
+    public void setIDFoto(int IDFoto) {
         this.IDFoto = IDFoto;
     }
 

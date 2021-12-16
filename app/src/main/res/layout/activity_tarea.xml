@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context=".TareaActivity">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="Volver"
@@ -20,89 +21,100 @@
         app:layout_constraintVertical_bias="0.051" />
 
     <ImageButton
-        android:id="@+id/BotonAyuda"
-        android:layout_width="103dp"
-        android:layout_height="104dp"
-        android:onClick="EntregarTarea"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.903"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.914"
-        app:srcCompat="@android:drawable/ic_dialog_info" />
-
-    <ImageButton
-        android:id="@+id/BotonEntrega"
+        android:id="@+id/botonEntrega"
         android:layout_width="112dp"
         android:layout_height="100dp"
+        android:onClick="EstaEntregada"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.914"
+        app:layout_constraintVertical_bias="0.933"
         app:srcCompat="@android:drawable/checkbox_on_background" />
 
-    <ImageView
-        android:id="@+id/imagenProfesorSolicitante"
-        android:layout_width="119dp"
-        android:layout_height="145dp"
+    <TextView
+        android:id="@+id/HoraEntregaTarea"
+        android:layout_width="192dp"
+        android:layout_height="165dp"
+        android:text="a"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintVertical_bias="0.697" />
 
     <TextView
-        android:id="@+id/HoraentregaFeedback"
-        android:layout_width="277dp"
-        android:layout_height="194dp"
+        android:id="@+id/Feedback"
+        android:layout_width="192dp"
+        android:layout_height="165dp"
+        android:text="a"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.682" />
+        app:layout_constraintVertical_bias="0.697" />
 
     <ImageView
-        android:id="@+id/ImagenObjeto"
-        android:layout_width="213dp"
-        android:layout_height="190dp"
+        android:id="@+id/imagenObjeto"
+        android:layout_width="173dp"
+        android:layout_height="164dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintHorizontal_bias="0.827"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2"
-        app:srcCompat="@drawable/logo2" />
+        app:layout_constraintVertical_bias="0.319" />
 
     <TextView
         android:id="@+id/CantidadObjeto"
         android:layout_width="121dp"
         android:layout_height="64dp"
+        android:text="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.824"
+        app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.467" />
+        app:layout_constraintVertical_bias="0.271" />
+
+    <TextView
+        android:id="@+id/nombreObjeto"
+        android:layout_width="121dp"
+        android:layout_height="64dp"
+        android:text="aaaaaaaaaaaaa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.679"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052" />
 
     <TextView
         android:id="@+id/statusTarea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="129dp" />
+        android:text="a"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.172" />
 
     <ImageView
-        android:id="@+id/PictogramaFeedback"
-        android:layout_width="157dp"
-        android:layout_height="176dp"
-        app:srcCompat="@android:drawable/stat_notify_sdcard"
-        tools:layout_editor_absoluteX="357dp"
-        tools:layout_editor_absoluteY="455dp" />
+        android:id="@+id/pictogramaFeedback"
+        android:layout_width="173dp"
+        android:layout_height="175dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.692"
+        app:srcCompat="@android:drawable/stat_notify_sdcard" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
