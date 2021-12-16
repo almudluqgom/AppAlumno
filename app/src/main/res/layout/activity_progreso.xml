@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_white"
-    tools:context=".MainActivity">
+    tools:context=".ProgresoActivity">
 
     <!-- Card view for displaying the -->
     <!-- Pie chart and details of pie chart -->
@@ -291,7 +291,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:insetLeft="40dp"
-            android:insetTop="150"
+            android:insetTop="100dp"
             android:onClick="Volver"
             android:text="Volver"
             app:layout_constraintBottom_toBottomOf="parent"
