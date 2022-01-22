@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         login = (ImageButton)findViewById(R.id.BotonLogin);
-        login.setBackgroundResource(R.drawable.logo1);
+        login.setBackgroundResource(R.drawable.iconoapp);
         textAl = (TextView)findViewById(R.id.TextoSaludoAlumno);
         botonT = (Button)findViewById(R.id.BotonTarea);
         botonP = (Button)findViewById(R.id.BotonProgreso);
@@ -34,7 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
         if(getIntent().getExtras() != null) {
             AlumnoActual = (Alumno) getIntent().getSerializableExtra("alumno");
-            login.setBackgroundResource(AlumnoActual.getIDFoto());
+
+            String variableValue = AlumnoActual.getIDFoto();
+            login.setBackgroundResource(getResources().getIdentifier(variableValue, "drawable", getPackageName()));
             IdAlumno =AlumnoActual.getIdAlumno();
         }
 

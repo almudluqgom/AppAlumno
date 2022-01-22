@@ -2,6 +2,7 @@
 package info.androidhive.sqlite.helper.helper;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -73,7 +74,12 @@ public class RecViewAdaptTarea extends RecyclerView.Adapter<RecViewAdaptTarea.Vi
         String nombre = t.getNombreObjeto() + " " + "x" + t.getCantidadObjeto();
         holder.nombreObjeto.setText(nombre);//String NombreObjeto
         holder.horaE.setText(t.getHoraEntrega());
-        holder.fotoTarea.setImageResource(t.getIdFoto());//int idFoto,
+        //holder.fotoTarea.setImageResource(t.getIdFoto());//int idFoto,
+
+        Resources res = holder.itemView.getContext().getResources();
+        String variableValue = t.getIdFoto();
+        holder.fotoTarea.setImageResource(res.getIdentifier(variableValue, "drawable", holder.itemView.getContext().getPackageName()));
+
         switch (t.getStatus()){
             case 0:
                 holder.estadoT.setText("Estado: Empezada");

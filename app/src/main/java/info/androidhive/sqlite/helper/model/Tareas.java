@@ -5,8 +5,8 @@ import java.io.Serializable;
 public class Tareas implements Serializable {
 
     String NombreObjeto;
-    int idTarea,idProfe,idAlumno, idObjeto, idFoto;
-    String HoraEntrega, Comentario;
+    int idTarea,idProfe,idAlumno, idObjeto;
+    String HoraEntrega, Comentario, idFoto;
     boolean ConfirmaAlumno, ConfirmaProfesor;
     int status, cantidadObjeto;
     int idFotoFeedback;
@@ -27,7 +27,7 @@ public class Tareas implements Serializable {
         this.idFotoFeedback = tareas.getIdFotoFeedback();
     }
 
-    public Tareas( int idTarea,String nombreObjeto,int idFoto,int idProfe, int idAlumno, int idObjeto,  String horaEntrega,
+    public Tareas( int idTarea,String nombreObjeto,String idFoto,int idProfe, int idAlumno, int idObjeto,  String horaEntrega,
                    String comentario, int cantidadObjeto, boolean confirmaAlumno, boolean confirmaProfesor, int status, int idF) {
         this.idTarea=idTarea;
         this.NombreObjeto= nombreObjeto;
@@ -141,9 +141,9 @@ public class Tareas implements Serializable {
         this.cantidadObjeto = cantidadObjeto;
     }
 
-    public int getIdFoto() {        return idFoto;    }
+    public String getIdFoto() {        return idFoto;    }
 
-    public void setIdFoto(int idFoto) {       this.idFoto = idFoto;    }
+    public void setIdFoto(String idFoto) {       this.idFoto = idFoto;    }
 
     @Override
     public String toString() {

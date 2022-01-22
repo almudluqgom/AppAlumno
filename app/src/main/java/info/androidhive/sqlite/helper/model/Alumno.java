@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 public class Alumno implements Serializable {
 
-    String idAlumno;
-    String NombreApell;
-    int IDFoto;
+    String idAlumno, NombreApell, IDFoto;
     int TareasCompletas,TareasSinHacer,TareasEntregadas;
     int GotasAgua, EstatusMaceta;
 
@@ -22,7 +20,7 @@ public class Alumno implements Serializable {
         this.GotasAgua = a.getGotasAgua();
         this.EstatusMaceta = a.getEstatusMaceta();
     }
-    public Alumno(String idAl, String nombreApell, int IDFoto, int tareasCompletas, int tareasSinHacer,
+    public Alumno(String idAl, String nombreApell, String IDFoto, int tareasCompletas, int tareasSinHacer,
                   int tareasEntregadas, int gotasAgua, int estatusMaceta) {
         this.idAlumno = idAl;
         this.NombreApell = nombreApell;
@@ -50,11 +48,11 @@ public class Alumno implements Serializable {
         NombreApell = nombreApell;
     }
 
-    public int getIDFoto() {
+    public String getIDFoto() {
         return IDFoto;
     }
 
-    public void setIDFoto(int IDFoto) {
+    public void setIDFoto(String IDFoto) {
         this.IDFoto = IDFoto;
     }
 

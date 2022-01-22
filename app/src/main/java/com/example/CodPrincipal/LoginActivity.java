@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                                 listAlumnos.add(new Alumno(
                                         Alum.getString("id"),
                                         Alum.getString("nombre"),
-                                        Alum.getInt("idfoto"),
+                                        Alum.getString("idfoto"),
                                         Alum.getInt("tareasc"),
                                         Alum.getInt("tareass"),
                                         Alum.getInt("tarease"),

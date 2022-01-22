@@ -61,6 +61,7 @@ public class VerListaActivity extends AppCompatActivity {
                 Intent IrATarea = new Intent(getApplicationContext(), TareaActivity.class);
                 Tareas t = new Tareas(listTareas.get(recyclerViewTareas.getChildAdapterPosition(v)));
                 IrATarea.putExtra("alumno", AlumnoActual);
+                IrATarea.putExtra("tarea", t);
                 startActivity(IrATarea);
             }
         });
@@ -91,7 +92,7 @@ public class VerListaActivity extends AppCompatActivity {
                                 listTareas.add(new Tareas(
                                         T.getInt("id"),       //int id,
                                         T.getString("nombre"), //String NombreObjeto
-                                        T.getInt("idFoto"),       //int idFoto,
+                                        T.getString("idFoto"),       //int idFoto,
                                         T.getInt("idProfesor"),//int idProfe,
                                         T.getInt("idAlumno"),//int idAlumno,
                                         T.getInt("idObjeto"),//int idObjeto,
